@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>الأعمال الموجهة – الاحصاء 3</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="education-icon.png" sizes="32x32">
+<link rel="icon" type="image/png" href="education-icon.png" sizes="16x16">
+<meta property="og:image" content="education-icon.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="education-icon.png">
+<style>
+	:root {
+		--bg: #f7f3eb;
+		--paper: #fffdf8;
+		--ink: #2c241b;
+		--muted: #6b5e4e;
+		--accent: #8b5e3c;
+		--accent-light: #ECD8CB;
+		--accent-dark: #6d4428;
+		--book: #969696;
+		--book-ink: #ADADAD;
+		--book-light: #F2F2F2;
+		--book-dark: #525252;
+		--exo: #FF5722;
+		--exo-ink: #FF825C;
+		--exo-light: #FFC8B8;
+		--exo-dark: #D13100;
+		--sol: #45BA4B;
+		--sol-ink: #38993D;
+		--sol-light: #CBECCD;
+		--sol-dark: #205622;
+		--shelf: #e8dfd0;
+		--border: #d9cfc0;
+		--pdf: #c0392b;
+		--zip: #d35400;
+		--docx: #2980b9;
+		--shadow: 0 4px 20px rgba(44, 36, 27, 0.08);
+		--radius: 12px;
+	}
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+	body {
+		font-family: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
+		background: var(--bg);
+		background-image:
+			radial-gradient(ellipse at top, #faf6ee 0%, transparent 60%),
+			linear-gradient(180deg, #f0e9dc 0%, var(--bg) 100%);
+		color: var(--ink);
+		min-height: 100vh;
+		line-height: 1.6;
+		padding: 0 16px 60px;
+	}
+.library-header {
+max-width: 920px;
+margin: 0 auto 42px;
+padding: 52px 24px 36px;
+text-align: center;
+position: relative;
+}
+
+.library-header::before {
+content: "";
+position: absolute;
+top: 0;
+left: 50%;
+transform: translateX(-50%);
+width: 90px;
+height: 4px;
+background: linear-gradient(90deg, transparent, var(--accent), transparent);
+border-radius: 2px;
+}
+
+/* Small academic badge */
+.library-badge {
+display: inline-block;
+background: var(--shelf);
+color: var(--accent-dark);
+font-size: 0.78rem;
+font-weight: 600;
+letter-spacing: 0.04em;
+padding: 5px 5px;
+border-radius: 50px;
+border: 1px solid var(--border);
+margin-bottom: 18px;
+}
+
+.library-icon {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 10px;
+    background: linear-gradient(145deg, #fff9f0, #f3ebe0);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+    box-shadow: 0 6px 18px rgba(44, 36, 27, 0.06);
+}
+
+.library-header h1 {
+font-family: 'Amiri', serif;
+font-size: clamp(2rem, 5vw, 2.6rem);
+font-weight: 700;
+color: var(--ink);
+margin-bottom: 8px;
+letter-spacing: -0.02em;
+}
+.library-subtitle {
+font-size: 1.1rem;
+color: var(--muted);
+margin-bottom: 10px;
+font-weight: 500;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-wrap: wrap;
+gap: 0;
+}
+
+.library-subtitle span {
+    margin: 0;
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    width: 150px;
+	transition: transform 0.15s ease;
+}
+.library-subtitle span:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 10px 28px rgba(44, 36, 27, 0.12);
+}
+.library-subtitle .book {
+background: var(--book-light);
+color: var(--book-dark);
+border: 1px solid var(--book);
+}
+.library-subtitle .lesson {
+background: var(--accent-light);
+color: var(--accent-dark);
+border: 1px solid var(--accent);
+}
+.library-subtitle .exo {
+background: var(--exo-light);
+color: var(--exo);
+border: 1px solid var(--exo);
+}
+.library-subtitle .sol {
+background: var(--sol-light);
+color: var(--sol-dark);
+border: 1px solid var(--sol);
+}
+.library-meta {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 14px;
+flex-wrap: wrap;
+}
+.file-count {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+background: var(--paper);
+border: 1px solid var(--border);
+padding: 8px 18px;
+border-radius: 50px;
+box-shadow: var(--shadow);
+}
+.count-number {
+font-weight: 700;
+font-size: 1.05rem;
+color: var(--accent-dark);
+}
+.count-label {
+font-size: 0.88rem;
+color: var(--muted);
+font-weight: 500;
+}
+	.error {
+		max-width: 920px;
+		margin: 0 auto 24px;
+		background: #fdf2f0;
+		color: #9b2c2c;
+		border: 1px solid #f5c6c0;
+		border-radius: var(--radius);
+		padding: 14px 20px;
+		text-align: center;
+		font-weight: 500;
+	}
+	.shelf {
+		max-width: 920px;
+		margin: 0 auto;
+	}
+	.shelf-title {
+		font-family: 'Amiri', serif;
+		font-size: 1.35rem;
+		color: var(--accent-dark);
+		margin-bottom: 20px;
+		padding-bottom: 10px;
+		border-bottom: 2px solid var(--border);
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+	.shelf-title span {
+		font-size: 1.1rem;
+	}
+	.file-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 14px;
+	}
+	@media (min-width: 640px) {
+		.file-grid {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+	.file-card{
+		background: var(--paper);
+		border: 1px solid var(--border);
+		border-radius: var(--radius);
+		padding: 18px 20px;
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		box-shadow: var(--shadow);
+		transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+		position: relative;
+		overflow: hidden;
+	}
+	.file-card::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 5px;
+		height: 100%;
+		background: var(--accent);
+		opacity: 0.7;
+	}
+	.file-card:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 10px 28px rgba(44, 36, 27, 0.12);
+		border-color: #c9b8a0;
+	}
+	.file-icon {
+		flex-shrink: 0;
+		width: 48px;
+		height: 48px;
+		border-radius: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 1.05rem;
+		font-weight: 700;
+		color: white;
+	}
+	.file-icon.pdf {
+		background: linear-gradient(135deg, #c0392b, #a93226);
+	}
+	.file-icon.zip {
+        background-color: #d35400; 
+        background: linear-gradient(135deg, #f39c12, #bc5a00);
+	}
+	.file-icon.docx {
+		background: linear-gradient(135deg, #2980b9, #1f6a9a);
+	}
+	.file-info {
+		flex: 1;
+		min-width: 0;
+	}
+	.file-name, .file-name-sol {
+		font-weight: 600;
+		font-size: 0.98rem;
+		color: var(--ink);
+		margin-bottom: 4px;
+		word-break: break-word;
+		line-height: 1.35;
+	}
+	.file-name-sol {
+		font-weight: 900;
+		color: var(--ink-sol);
+	}
+	.file-meta {
+		font-size: 0.82rem;
+		color: var(--muted);
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		flex-wrap: wrap;
+	}
+	.badge {
+		display: inline-block;
+		font-size: 0.72rem;
+		font-weight: 600;
+		padding: 2px 8px;
+		border-radius: 4px;
+		letter-spacing: 0.03em;
+	}
+	.badge.pdf {
+		background: #fdecea;
+		color: var(--pdf);
+	}
+	.badge.zip {
+		background: #e8ded3;
+		color: var(--zip);
+	}
+	.badge.docx {
+		background: #eaf4fb;
+		color: var(--docx);
+	}
+	.file-size {
+		color: var(--muted);
+		font-weight: 500;
+	}
+	.btn-download {
+		flex-shrink: 0;
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+		background: var(--accent);
+		color: #fff;
+		text-decoration: none;
+		font-size: 0.9rem;
+		font-weight: 600;
+		padding: 10px 18px;
+		border-radius: 8px;
+		transition: background 0.2s ease, transform 0.15s ease;
+		box-shadow: 0 2px 8px rgba(139, 94, 60, 0.25);
+	}
+	.btn-download:hover {
+		background: var(--accent-dark);
+		transform: scale(1.03);
+	}
+	.btn-download:active {
+		transform: scale(0.98);
+	}
+	.empty {
+		text-align: center;
+		padding: 60px 20px;
+		background: var(--paper);
+		border: 1px dashed var(--border);
+		border-radius: var(--radius);
+		color: var(--muted);
+	}
+	.empty-icon {
+		font-size: 48px;
+		margin-bottom: 12px;
+		opacity: 0.5;
+	}
+	.library-footer {
+		max-width: 920px;
+		margin: 48px auto 0;
+		text-align: center;
+		font-size: 0.85rem;
+		color: var(--muted);
+		padding-top: 24px;
+		border-top: 1px solid var(--border);
+	}
+.file-card.sol {
+background: var(--sol-light);
+border: 1px solid var(--sol);
+}
+.file-card.sol::before {
+background: var(--sol);
+}
+.file-name.sol {
+font-weight: 900;
+color: var(--sol-ink);
+}
+.btn-download.sol {
+background: var(--sol);
+box-shadow: 0 2px 8px rgba(109, 192, 134, 0.5);
+}
+.btn-download.sol:hover {
+background: var(--sol-dark);
+}
+.btn-download.sol:active {
+
+}
+.file-card.exo {
+background: var(--exo-light);
+border: 1px solid var(--exo);
+}
+.file-card.exo::before {
+background: var(--exo);
+}
+.file-name.exo {
+font-weight: 900;
+color: var(--exo-ink);
+}
+.btn-download.exo {
+background: var(--exo);
+box-shadow: 0 2px 8px rgba(200, 40, 30, 0.5);
+}
+.btn-download.exo:hover {
+background: var(--exo-dark);
+}
+.btn-download.exo:active {
+
+}
+.file-card.book {
+background: var(--book-light);
+border: 1px solid var(--book);
+}
+.file-card.book::before {
+background: var(--book);
+}
+.file-name.book {
+font-weight: 900;
+color: var(--book-ink);
+}
+.btn-download.book {
+background: var(--book);
+box-shadow: 0 2px 8px rgba(40, 40, 40, 0.5);
+}
+.btn-download.book:hover {
+background: var(--book-dark);
+}
+.btn-download.book:active {
+
+}
+
+</style>
+</head>
+<body>
+	<header class="library-header">
+		<div class="library-icon">📖 </div>
+		<h1>الاحصاء 3</h1>
+			<p class="library-subtitle">
+                <span class="lesson">دروس</span>
+                <span class="exo">أعمال موجهة</span>
+                <span class="sol">حلول نموذجية</span>
+                <!--<span class="book">كتب</span>-->
+            </p>
+					<div class="file-count">
+			<span class="count-number">13</span>
+			<span class="count-label">ملف متاح</span>
+			</div>
+			</header>
+		<main class="shelf">
+					<!--<h2 class="shelf-title">
+				<span></span> الملفات
+			</h2>-->
+			<div class="file-grid">
+														<article class="file-card exo">
+						<div class="file-icon pdf">
+							PDF						</div>
+						<div class="file-info">
+							<div class="file-name exo" title="السلسلة رقم 01_ توزيع برنولي وتوزيع ذو حدين (التمارين).pdf">
+								السلسلة رقم 01 :  توزيع برنولي وتوزيع ذو حدين (التمارين)							</div>
+							<div class="file-meta">
+								<span class="badge pdf">PDF</span>
+								<span class="file-size">318 KB</span>
+							</div>
+						</div>
+						<a class="btn-download exo" href="?download=%D8%A7%D9%84%D8%B3%D9%84%D8%B3%D9%84%D8%A9+%D8%B1%D9%82%D9%85+01_+%D8%AA%D9%88%D8%B2%D9%8A%D8%B9+%D8%A8%D8%B1%D9%86%D9%88%D9%84%D9%8A+%D9%88%D8%AA%D9%88%D8%B2%D9%8A%D8%B9+%D8%B0%D9%88+%D8%AD%D8%AF%D9%8A%D9%86+%28%D8%A7%D9%84%D8%AA%D9%85%D8%A7%D8%B1%D9%8A%D9%86%29.pdf">
+							<span>⬇</span> تحميل
+						</a>
+					</article>
+														<article class="file-card sol">
+						<div class="file-icon pdf">
+							PDF						</div>
+						<div class="file-info">
+							<div class="file-name sol" title="السلسلة رقم 01_ توزيع برنولي وتوزيع ذو حدين (الحل).pdf">
+								السلسلة رقم 01 :  توزيع برنولي وتوزيع ذو حدين (الحل)							</div>
+							<div class="file-meta">
+								<span class="badge pdf">PDF</span>
+								<span class="file-size">807.4 KB</span>
+							</div>
+						</div>
+						<a class="btn-download sol" href="?download=%D8%A7%D9%84%D8%B3%D9%84%D8%B3%D9%84%D8%A9+%D8%B1%D9%82%D9%85+01_+%D8%AA%D9%88%D8%B2%D9%8A%D8%B9+%D8%A8%D8%B1%D9%86%D9%88%D9%84%D9%8A+%D9%88%D8%AA%D9%88%D8%B2%D9%8A%D8%B9+%D8%B0%D9%88+%D8%AD%D8%AF%D9%8A%D9%86+%28%D8%A7%D9%84%D8%AD%D9%84%29.pdf">
+							<span>⬇</span> تحميل
+						</a>
+					</article>
+														<article class="file-card exo">
+						<div class="file-icon pdf">
+							PDF						</div>
+						<div class="file-info">
+							<div class="file-name exo" title="السلسلة رقم 02_ توزيع بواسون (التمارين).pdf">
+								السلسلة رقم 02 :  توزيع بواسون (التمارين)							</div>
+							<div class="file-meta">
+								<span class="badge pdf">PDF</span>
+								<span class="file-size">282.2 KB</span>
+							</div>
+						</div>
+						<a class="btn-download exo" href="?download=%D8%A7%D9%84%D8%B3%D9%84%D8%B3%D9%84%D8%A9+%D8%B1%D9%82%D9%85+02_+%D8%AA%D9%88%D8%B2%D9%8A%D8%B9+%D8%A8%D9%88%D8%A7%D8%B3%D9%88%D9%86+%28%D8%A7%D9%84%D8%AA%D9%85%D8%A7%D8%B1%D9%8A%D9%86%29.pdf">
+							<span>⬇</span> تحميل
+						</a>
+					</article>
+														<article class="file-card sol">
+						<div class="file-icon pdf">
+							PDF						</div>
+						<div class="file-info">
+							<div class="file-name sol" title="السلسلة رقم 02_ توزيع بواسون (الحل).pdf">
+								السلسلة رقم 02 :  توزيع بواسون (الحل)							</div>
+							<div class="file-meta">
+								<span class="badge pdf">PDF</span>
+								<span class="file-size">644.2 KB</span>
+							</div>
+						</div>
+						<a class="btn-download sol" href="?download=%D8%A7%D9%84%D8%B3%D9%84%D8%B3%D9%84%D8%A9+%D8%B1%D9%82%D9%85+02_+%D8%AA%D9%88%D8%B2%D9%8A%D8%B9+%D8%A8%D9%88%D8%A7%D8%B3%D9%88%D9%86+%28%D8%A7%D9%84%D8%AD%D9%84%29.pdf">
+							<span>⬇</span> تحميل
+						</a>
+					</article>
+														<article class="file-card exo">
+						<div class="file-icon pdf">
+							PDF						</div>
+						<div class="file-info">
+							<div class="file-name exo" title="السلسلة رقم 03_ التوزيع الهندسي وفوق الهندسي (التمارين).pdf">
+								السلسلة رقم 03 :  التوزيع الهندسي وفوق الهندسي (التمارين)							</div>
+							<div class="file-meta">
+								<span class="badge pdf">PDF</span>
+								<span class="file-size">279.1 KB</span>
+							</div>
+						</div>
+						<a class="btn-download exo" href="?download=%D8%A7%D9%84%D8%B3%D9%84%D8%B3%D9%84%D8%A9+%D8%B1%D9%82%D9%85+03_+%D8%A7%D9%84%D8%AA%D9%88%D8%B2%D9%8A%D8%B9+%D8%A7%D9%84%D9%87%D9%86%D8%AF%D8%B3%D9%8A+%D9%88%D9%81%D9%88%D9%82+%D8%A7%D9%84%D9%87%D9%86%D8%AF%D8%B3%D9%8A+%28%D8%A7%D9%84%D8%AA%D9%85%D8%A7%D8%B1%D9%8A%D9%86%29.pdf">
+							<span>⬇</span> تحميل
+						</a>
+					</article>
+														<article class="file-card sol">
+						<div class="file-icon pdf">
+							PDF						</div>
+						<div class="file-info">
+							<div class="file-name sol" title="السلسلة رقم 03_ التوزيع الهندسي وفوق الهندسي (الحل).pdf">
+								السلسلة رقم 03 :  التوزيع الهندسي وفوق الهندسي (الحل)							</div>
+							<div class="file-meta">
+								<span class="badge pdf">PDF</span>
+								<span class="file-size">592.1 KB</span>
+							</div>
+						</div>
+						<a class="btn-download sol" href="?download=%D8%A7%D9%84%D8%B3%D9%84%D8%B3%D9%84%D8%A9+%D8%B1%D9%82%D9%85+03_+%D8%A7%D9%84%D8%AA%D9%88%D8%B2%D9%8A%D8%B9+%D8%A7%D9%84%D9%87%D9%86%D8%AF%D8%B3%D9%8A+%D9%88%D9%81%D9%88%D9%82+%D8%A7%D9%84%D9%87%D9%86%D8%AF%D8%B3%D9%8A+%28%D8%A7%D9%84%D8%AD%D9%84%29.pdf">
+							<span>⬇</span> تحميل
+						</a>
+					</article>
+														<article class="file-card exo">
+						<div class="file-icon pdf">
+							PDF						</div>
+						<div class="file-info">
+							<div class="file-name exo" title="السلسلة رقم 04_ التوزيع الطبيعي (التمارين).pdf">
+								السلسلة رقم 04 :  التوزيع الطبيعي (التمارين)							</div>
+							<div class="file-meta">
+								<span class="badge pdf">PDF</span>
+								<span class="file-size">367.3 KB</span>
+							</div>
+						</div>
+						<a class="btn-download exo" href="?download=%D8%A7%D9%84%D8%B3%D9%84%D8%B3%D9%84%D8%A9+%D8%B1%D9%82%D9%85+04_+%D8%A7%D9%84%D8%AA%D9%88%D8%B2%D9%8A%D8%B9+%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%B9%D9%8A+%28%D8%A7%D9%84%D8%AA%D9%85%D8%A7%D8%B1%D9%8A%D9%86%29.pdf">
+							<span>⬇</span> تحميل
+						</a>
+					</article>
+														<article class="file-card sol">
+						<div class="file-icon pdf">
+							PDF						</div>
+						<div class="file-info">
+							<div class="file-name sol" title="النمرين رقم 8 (الحل).pdf">
+								النمرين رقم 8 (الحل)							</div>
+							<div class="file-meta">
+								<span class="badge pdf">PDF</span>
+								<span class="file-size">244.9 KB</span>
+							</div>
+						</div>
+						<a class="btn-download sol" href="?download=%D8%A7%D9%84%D9%86%D9%85%D8%B1%D9%8A%D9%86+%D8%B1%D9%82%D9%85+8+%28%D8%A7%D9%84%D8%AD%D9%84%29.pdf">
+							<span>⬇</span> تحميل
+						</a>
+					</article>
+														<article class="file-card ">
+						<div class="file-icon zip">
+							ZIP						</div>
+						<div class="file-info">
+							<div class="file-name " title="امتحان تقييمي رقم 01.zip">
+								امتحان تقييمي رقم 01							</div>
+							<div class="file-meta">
+								<span class="badge zip">ZIP</span>
+								<span class="file-size">22.6 KB</span>
+							</div>
+						</div>
+						<a class="btn-download " href="?download=%D8%A7%D9%85%D8%AA%D8%AD%D8%A7%D9%86+%D8%AA%D9%82%D9%8A%D9%8A%D9%85%D9%8A+%D8%B1%D9%82%D9%85+01.zip">
+							<span>⬇</span> تحميل
+						</a>
+					</article>
+														<article class="file-card ">
+						<div class="file-icon pdf">
+							PDF						</div>
+						<div class="file-info">
+							<div class="file-name " title="ملحق الجداول الاحصائية.pdf">
+								ملحق الجداول الاحصائية							</div>
+							<div class="file-meta">
+								<span class="badge pdf">PDF</span>
+								<span class="file-size">524.1 KB</span>
+							</div>
+						</div>
+						<a class="btn-download " href="?download=%D9%85%D9%84%D8%AD%D9%82+%D8%A7%D9%84%D8%AC%D8%AF%D8%A7%D9%88%D9%84+%D8%A7%D9%84%D8%A7%D8%AD%D8%B5%D8%A7%D8%A6%D9%8A%D8%A9.pdf">
+							<span>⬇</span> تحميل
+						</a>
+					</article>
+														<article class="file-card ">
+						<div class="file-icon pdf">
+							PDF						</div>
+						<div class="file-info">
+							<div class="file-name " title="ملخص التوزيعات  الاحتمالية غير مستمرة.pdf">
+								ملخص التوزيعات  الاحتمالية غير مستمرة							</div>
+							<div class="file-meta">
+								<span class="badge pdf">PDF</span>
+								<span class="file-size">256.1 KB</span>
+							</div>
+						</div>
+						<a class="btn-download " href="?download=%D9%85%D9%84%D8%AE%D8%B5+%D8%A7%D9%84%D8%AA%D9%88%D8%B2%D9%8A%D8%B9%D8%A7%D8%AA++%D8%A7%D9%84%D8%A7%D8%AD%D8%AA%D9%85%D8%A7%D9%84%D9%8A%D8%A9+%D8%BA%D9%8A%D8%B1+%D9%85%D8%B3%D8%AA%D9%85%D8%B1%D8%A9.pdf">
+							<span>⬇</span> تحميل
+						</a>
+					</article>
+														<article class="file-card ">
+						<div class="file-icon pdf">
+							PDF						</div>
+						<div class="file-info">
+							<div class="file-name " title="ملخص التوزيعات الاحتمالية (Common Distributions).pdf">
+								ملخص التوزيعات الاحتمالية (Common Distributions)							</div>
+							<div class="file-meta">
+								<span class="badge pdf">PDF</span>
+								<span class="file-size">64.9 KB</span>
+							</div>
+						</div>
+						<a class="btn-download " href="?download=%D9%85%D9%84%D8%AE%D8%B5+%D8%A7%D9%84%D8%AA%D9%88%D8%B2%D9%8A%D8%B9%D8%A7%D8%AA+%D8%A7%D9%84%D8%A7%D8%AD%D8%AA%D9%85%D8%A7%D9%84%D9%8A%D8%A9+%28Common+Distributions%29.pdf">
+							<span>⬇</span> تحميل
+						</a>
+					</article>
+														<article class="file-card book">
+						<div class="file-icon pdf">
+							PDF						</div>
+						<div class="file-info">
+							<div class="file-name book" title="من كتاب التوزيعات االاحتمالية (Probability Distribution).pdf">
+								من كتاب التوزيعات االاحتمالية (Probability Distribution)							</div>
+							<div class="file-meta">
+								<span class="badge pdf">PDF</span>
+								<span class="file-size">683.6 KB</span>
+							</div>
+						</div>
+						<a class="btn-download book" href="?download=%D9%85%D9%86+%D9%83%D8%AA%D8%A7%D8%A8+%D8%A7%D9%84%D8%AA%D9%88%D8%B2%D9%8A%D8%B9%D8%A7%D8%AA+%D8%A7%D8%A7%D9%84%D8%A7%D8%AD%D8%AA%D9%85%D8%A7%D9%84%D9%8A%D8%A9+%28Probability+Distribution%29.pdf">
+							<span>⬇</span> تحميل
+						</a>
+					</article>
+							</div>
+			</main>
+	<footer class="library-footer">
+		السنة الدراسية: 2026-2027
+	</footer>
+</body>
+</html>
