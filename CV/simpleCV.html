@@ -1,28 +1,7 @@
-<LINK href="/CV/lightCV.css" rel="stylesheet" media="screen" title="main" >
-<?php if(isset($lang)) { ?>
-<style>
-    @import url("https://fonts.googleapis.com/css?family=Montserrat");
-    @import url("https://fonts.googleapis.com/css?family=Roboto");
-    @import url("https://fonts.googleapis.com/css?family=League+Gothic");
-    @import url("https://fonts.googleapis.com/css?family=Bitter");
-</style>
-<LINK href="/CV/miniScreen.css" rel="stylesheet">
-<?php /* ?>
-<script>
-var r = document.querySelector(':root');
-function myFunction_get() {
-  var rs = getComputedStyle(r);
-  alert("The value of --primary-bg-color is: " + rs.getPropertyValue('--primary-bg-color'));
-}
-function myFunction_set() {
-  r.style.setProperty('--resume-width', '550px');
-}
-</script>
-<?php */ } else { ?>
-<LINK href="/fonts/font-awesome.min.css" rel="stylesheet" />
-<?php } ?>
+<LINK href="../CV/lightCV.css" rel="stylesheet" media="screen" title="main" >
+<LINK href="../fonts/font-awesome.min.css" rel="stylesheet" />
 
-<div class="resume" <?php if(isset($subfold) && $subfold=="CV") { echo "style=\"margin-bottom:5px;\""; } ?>>
+<div class="resume" >
 <div id="change-theme" style="position: absolute; float: left; left: 5px; top: 5px; z-index: 5; background: var(--color-val01); color: var(--color-val10); border: none; border-radius: 50%; width: 20px; height: 20px; text-wrap: nowrap; padding: 5px; justify-content: center; box-sizing: border-box; display : flex; align-items : center;; cursor: pointer;"><i id="theme-icon" class="icon-moon"></i></div>
   <div class="base">
 	<div class="profile">
@@ -42,17 +21,51 @@ Please feel free to reach out directly or join my dedicated discussion space to 
 	</div>
 	<div class="contact">
 	  <h1>Contact Me</h1>
-	  <div class="call"><a href="tel:+213550192029"><i class="icon-phone"></i><span><img src="/config/imgstr.php?imgttl=<?php echo urlencode('+213 (0) 550-19-20-29'); ?>" height=16 class="imgstr" ></span></a></div>
-	  <div class="address"><a href=""><i class="icon-map-marker"></i><span><img src="/config/imgstr.php?imgttl=<?php echo urlencode('Tiaret (Algeria)'); ?>" height=16 class="imgstr" ></span></a>
+	  <div class="call"><a href="tel:+213550192029"><i class="icon-phone"></i><span><img src="/config/imgstr.php?imgttl=%2B213+%280%29+550-19-20-29" height=16 class="imgstr" ></span></a></div>
+	  <div class="address"><a href=""><i class="icon-map-marker"></i><span><img src="/config/imgstr.php?imgttl=Tiaret+%28Algeria%29" height=16 class="imgstr" ></span></a>
 	  </div>
-	  <div class="email"><a href="mailto:infofsite@yahoo.com"><i class="icon-envelope"></i><span><img src="/config/imgstr.php?imgttl=<?php echo urlencode('infofsite@yahoo.com'); ?>" height=16 class="imgstr"></span></a></div>
-	  <div class="website"><a href="http://bouziane.rf.gd/" target="_blank"><i class="icon-home"></i><span><img src="/config/imgstr.php?imgttl=<?php echo urlencode('http://bouziane.rf.gd/'); ?>" height=16 class="imgstr" ></span></a></div>
+	  <div class="email"><a href="mailto:infofsite@yahoo.com"><i class="icon-envelope"></i><span><img src="/config/imgstr.php?imgttl=infofsite%40yahoo.com" height=16 class="imgstr"></span></a></div>
+	  <div class="website"><a href="http://bouziane.rf.gd/" target="_blank"><i class="icon-home"></i><span><img src="/config/imgstr.php?imgttl=http%3A%2F%2Fbouziane.rf.gd%2F" height=16 class="imgstr" ></span></a></div>
 	</div>
 	<div class="follow">
 	  <h1>Follow Me</h1>
 	  <div class="box">
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/en/social.php"; ?>
-	  </div>
+<a href="https://www.facebook.com/1147735267" target="_blank" title="My Facebook">
+  <i class="fa icon-facebook" style="background:#1877f2;"></i>
+</a>
+<a href="http://x.com/imedlink" target="_blank" title="My X">
+  <i class="fa txt" style="background:#000000;">X</i>
+</a>
+<a href="https://www.instagram.com/imedmail8" target="_blank" title="My Instagram">
+  <i class="fa icon-instagram" style="background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);"></i>
+</a>
+<a href="https://pin.it/363udiGC0" target="_blank" title="My Pinterest">
+  <i class="fa icon-pinterest" style="background:#e60023;"></i>
+</a>
+<a href="http://flickr.com/people/76900379@N05" target="_blank" title="My FLICKR">
+  <i class="fa icon-flickr" style="background:#ff0084;"></i>
+</a>
+<a href="http://www.youtube.com/@MohamedBouziane" target="_blank" title="MY TUBE">
+  <i class="fa icon-youtube" style="background:#ff0000;"></i>
+</a>
+<a href="https://www.linkedin.com/in/bouziane-mohamed-510a1846" target="_blank" title="Follow us on LINKEDIN">
+  <i class="fa icon-linkedin" style="background:#0a66c2;"></i>
+</a>
+<a href="https://github.com/bouzianemohamed" target="_blank" title="My Github">
+  <i class="fa icon-github" style="background:#181717;"></i>
+</a>
+<a href="https://codepen.io/bouzianemohamed" target="_blank" title="My CodePen">
+  <i class="fa icon-code" style="background:#111111;"></i>
+</a>
+<a href="https://orcid.org/my-orcid?orcid=0009-0002-9906-1358" target="_blank" title="My ORCID">
+  <i class="fa txt" style="background:#a6ce39;">ID</i>
+</a>
+<a href="https://independent.academia.edu/MohamedBouziane2" target="_blank" title="My Academia">
+  <i class="fa txt" style="background:#41454a;">A</i>
+</a>
+<a href="https://www.researchgate.net/profile/Mohamed-Bouziane-7" target="_blank" title="My ResearchGate">
+  <i class="fa txt" style="background:#00998C; font-size: 1em;">R<span style="vertical-align: super; font-size: 0.5em;">G</span></i>
+</a>	  </div>
 	</div>
   </div>
   <div class="func">
