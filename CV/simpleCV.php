@@ -1,0 +1,312 @@
+<LINK href="/CV/lightCV.css" rel="stylesheet" media="screen" title="main" >
+<LINK href="/css/font-awesome.min.css" rel="stylesheet" />
+
+<div class="resume" >
+<div id="change-theme" style="position: absolute; float: left; left: 5px; top: 5px; z-index: 5; background: var(--color-val01); color: var(--color-val10); border: none; border-radius: 50%; width: 20px; height: 20px; text-wrap: nowrap; padding: 5px; justify-content: center; box-sizing: border-box; display : flex; align-items : center;; cursor: pointer;"><i id="theme-icon" class="icon-moon"></i></div>
+  <div class="base">
+	<div class="profile">
+	  <div class="photo">
+		<img src="/photos/DSC_903.png" />
+	  </div>
+	  <div class="info">
+		<h3 class="name">Bouziane Mohamed</h3>
+		<h4 class="job">Web Designer | Researcher | Statistician</h4>
+	  </div>
+	</div>
+	<div class="about">
+	  <h1>About Me</h1>
+I am a Data Engineer and PhD researcher with a multidisciplinary background spanning statistics, web development, and systems engineering. My expertise lies at the intersection of Statistics, Econometrics, and Computer Science, where I apply a proactive, collaborative approach to solving complex data challenges.<br />
+Driven by a commitment to continuous learning and professional excellence, I leverage strong communication skills to deliver impactful results within team-oriented environments.I invite you to explore my portfolio and research insights to see how my technical expertise can support your objectives.<br />
+Please feel free to reach out directly or join my dedicated discussion space to connect. I look forward to the opportunity to collaborate.
+	</div>
+	<div class="contact">
+	  <h1>Contact Me</h1>
+	  <div class="call"><a href="tel:+213550192029"><i class="icon-phone"></i><span><img src="/config/imgstr.php?imgttl=%2B213+%280%29+550-19-20-29" height=16 class="imgstr" ></span></a></div>
+	  <div class="address"><a href=""><i class="icon-map-marker"></i><span><img src="/config/imgstr.php?imgttl=Tiaret+%28Algeria%29" height=16 class="imgstr" ></span></a>
+	  </div>
+	  <div class="email"><a href="mailto:infofsite@yahoo.com"><i class="icon-envelope"></i><span><img src="/config/imgstr.php?imgttl=infofsite%40yahoo.com" height=16 class="imgstr"></span></a></div>
+	  <div class="website"><a href="http://bouziane.rf.gd/" target="_blank"><i class="icon-home"></i><span><img src="/config/imgstr.php?imgttl=http%3A%2F%2Fbouziane.rf.gd%2F" height=16 class="imgstr" ></span></a></div>
+	</div>
+	<div class="follow">
+	  <h1>Follow Me</h1>
+	  <div class="box">
+<a href="https://www.facebook.com/1147735267" target="_blank" title="My Facebook">
+  <i class="fa icon-facebook" style="background:#1877f2;"></i>
+</a>
+<a href="http://x.com/imedlink" target="_blank" title="My X">
+  <i class="fa txt" style="background:#000000;">X</i>
+</a>
+<a href="https://www.instagram.com/imedmail8" target="_blank" title="My Instagram">
+  <i class="fa icon-instagram" style="background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);"></i>
+</a>
+<a href="https://pin.it/363udiGC0" target="_blank" title="My Pinterest">
+  <i class="fa icon-pinterest" style="background:#e60023;"></i>
+</a>
+<a href="http://flickr.com/people/76900379@N05" target="_blank" title="My FLICKR">
+  <i class="fa icon-flickr" style="background:#ff0084;"></i>
+</a>
+<a href="http://www.youtube.com/@MohamedBouziane" target="_blank" title="MY TUBE">
+  <i class="fa icon-youtube" style="background:#ff0000;"></i>
+</a>
+<a href="https://www.linkedin.com/in/bouziane-mohamed-510a1846" target="_blank" title="Follow us on LINKEDIN">
+  <i class="fa icon-linkedin" style="background:#0a66c2;"></i>
+</a>
+<a href="https://github.com/bouzianemohamed" target="_blank" title="My Github">
+  <i class="fa icon-github" style="background:#181717;"></i>
+</a>
+<a href="https://codepen.io/bouzianemohamed" target="_blank" title="My CodePen">
+  <i class="fa icon-code" style="background:#111111;"></i>
+</a>
+<a href="https://orcid.org/my-orcid?orcid=0009-0002-9906-1358" target="_blank" title="My ORCID">
+  <i class="fa txt" style="background:#a6ce39;">ID</i>
+</a>
+<a href="https://independent.academia.edu/MohamedBouziane2" target="_blank" title="My Academia">
+  <i class="fa txt" style="background:#41454a;">A</i>
+</a>
+<a href="https://www.researchgate.net/profile/Mohamed-Bouziane-7" target="_blank" title="My ResearchGate">
+  <i class="fa txt" style="background:#00998C; font-size: 1em;">R<span style="vertical-align: super; font-size: 0.5em;">G</span></i>
+</a>	  </div>
+	</div>
+  </div>
+  <div class="func">
+	<div class="work">
+	  <h1><i class="icon-tasks"></i> Experience</h1>
+	  <ul>
+		<li><span> Studies and Synthesis Officer <i><!--Jan. 2013 - Now--></i></span>
+		  <small>National Unemployment Insurance Fund</small>
+		  <small><strong>Roles</strong></small>
+		  <small> - Generate comprehensive analytical reports</small>
+		  <small> - Maintain the core statistical functionality</small>
+		  <small> - Design advanced methods of inquiry</small>
+		  <small> - Optimize data warehousing</small>
+		  <small> - Enhance Statistical Information Systems</small>
+		</li>
+		<li><span>Engineer Statistician <i><!--Jan. 2009 - Dec. 2012--></i></span>
+		  <small>Ibn Khaldoun University of Tiaret</small>
+		  <small><strong>Roles</strong> Data Explorer (Statistical Officer).</small>
+		</li>
+	  </ul>
+	</div>
+	<div class="skills">
+	  <h1><i class="icon-cogs"></i> Relevant Skills</h1>
+	  <ul>
+		<li><span><strong>Research Area</strong> Econometric and Machine Learning Modeling</span></li>
+		<li><span>Extensive knowledge and application of statistical methods</span></li>
+		<li><span>knowledge of computer sciences (Software and Hardware)</span></li>
+		<li><span>General knowledge of inquiry methods</span></li>
+		<li><span>Required experience</span></li>
+		<li><span>Programming Language skills</span></li>
+	  </ul>
+	</div>
+	<div class="edu">
+	  <h1><i class="icon-briefcase"></i> Education</h1>
+	  <ul>
+		<li><span>3rd cycle doctorate<i><!--Mar. 2022 - Feb. 2026--></i></span>
+		  <small>Economic Analysis and Forecasting</small>
+		  <small>University of Tissemsilt</small>
+		  <small><strong>Thesis</strong> Imapct of Fiscal Policy on Economic Growth</small>
+		</li>
+		<li><span>Master<i><!--Oct. 2019 - Sep. 2020--></i></span>
+		  <small>Economics of money and banking</small>
+		  <small>Ibn Khaldoun University of Tiaret</small>
+		  <small><strong>Thesis</strong> Effectiveness of monetary policy on inflation targeting (case study: Algeria)</small>
+		</li>
+		<li><span>Bachelor of Applied Studies (DEUA)<i><!--Sep. 2016 - Jul. 2019--></i></span>
+		  <small>Technical English</small>
+		  <small>Continuous Training University (UFC)</small>
+		  <small><strong>Thesis</strong> Students’ perspectives towards their future career based on their English Level (case study: Tiaret University students)</small>
+		</li>
+		<li><span>Engineer<i><!--Sep. 2003 - Jul. 2008--></i></span>
+		  <small>Applied Statistics</small>
+		  <small>National High School of Statistics and Applied Economics (ENSSEA)</small>
+		  <small><strong>Thesis</strong> Statistical Studies on Using Internet in Algeria (case study: the province of Tiaret)</small>
+		</li>
+	  </ul>
+	</div>
+	<div class="sci">
+	  <h1><i class="icon-search"></i> Scientific Research Activiries</h1>
+		<h2>Project in progress</h2>
+		<ul>
+			<li>Embedding Econometric Techniques into an Intelligent Regression Algorithm.</li>
+			<li>A comparison between Econometrics and Machine learning.</li>
+		</ul>
+		<h2>Scientific Paper</h2>
+		<ul>
+			<li><a href="https://asjp.cerist.dz/en/article/276136" target="blank"><strong>Main author (2025)</strong> A hybrid methodology combining statistical learning and econometrics: Forecasting Algeria’s real GDP using a LASSO–OLS algorithmic approach. BEAM Journal, 9(2).</a></li>
+			<li><a href="https://asjp.cerist.dz/en/article/253421" target="blank"><strong>Co-author (2024)</strong> Enhancing Search Engine through AI. BEAM Journal, 8(2).</a></li>
+			<li><a href="https://asjp.cerist.dz/en/article/235515" target="blank"><strong>Co-author (2023)</strong> Perception des étudiants de l’atmosphère d’un site web éducatif : évaluation avec l’outil EEAM. AL-MIEYAR Journal, 14(2).</a></li>
+		</ul>
+		<h2>Proceeding</h2>
+		<ul>
+			<li> Towards a new inflation forecasting model: A machine learning approach using Algerian macroeconomic data. In Proceedings of the International Conference on Determinants of Inflation in Light of Economic Fluctuations and Geopolitical Instability (2023, October 15–16).</li>
+			<li dir="rtl"> مرافقة وتأهيل المشاريع الناشئة لتعزيز التحول الرقمي في الجزائر. في الملتقى الوطني حول التحول الرقمي لأدوات مراقبة التسيير ودوره في تحسين الأداء المالي للمؤسسات الاقتصادية (2025، 18 سبتمبر).</li>
+			<li dir="rtl"> Nation Branding as a Promotional Strategy – the Case of Peru. في الملتقى الوطني حول تسويق العلامة التجارية للمقاصد السياحية في الجزائر (2024، 24 جوان).</li>
+		</ul>
+	</div>
+	<div class="skills-prog">
+	  <h1><i class="icon-code"></i> Programming Skills</h1>
+	  <ul>
+		<li data-percent="80"><span>HTML</span>
+		  <div class="skills-bar">
+			<div class="fbar" style="--pgbar-length: 80%"></div>
+			<div class="bar" style="--pgbar-length: 80%"></div>
+		  </div>
+		</li>
+		<li data-percent="70"><span>PHP</span>
+		  <div class="skills-bar">
+			<div class="fbar" style="--pgbar-length: 70%"></div>
+			<div class="bar" style="--pgbar-length: 70%"></div>
+		  </div>
+		</li>
+		<li data-percent="60"><span>MySQL</span>
+		  <div class="skills-bar">
+			<div class="fbar" style="--pgbar-length: 60%"></div>
+			<div class="bar" style="--pgbar-length: 60%"></div>
+		  </div>
+		</li>
+		<li data-percent="60"><span>R</span>
+		  <div class="skills-bar">
+			<div class="fbar" style="--pgbar-length: 60%"></div>
+			<div class="bar" style="--pgbar-length: 60%"></div>
+		  </div>
+		</li>
+		<li data-percent="60"><span>Visual Basic</span>
+		  <div class="skills-bar">
+			<div class="fbar" style="--pgbar-length: 60%"></div>
+			<div class="bar" style="--pgbar-length: 60%"></div>
+		  </div>
+		</li>
+		<li data-percent="60"><span>JSON</span>
+		  <div class="skills-bar">
+			<div class="fbar" style="--pgbar-length: 60%"></div>
+			<div class="bar" style="--pgbar-length: 60%"></div>
+		  </div>
+		</li>
+		<li data-percent="50"><span>HTML 5</span>
+		  <div class="skills-bar">
+			<div class="fbar" style="--pgbar-length: 50%"></div>
+			<div class="bar" style="--pgbar-length: 50%"></div>
+		  </div>
+		</li>
+		<li data-percent="50"><span>CSS3 & SCSS</span>
+		  <div class="skills-bar">
+			<div class="fbar" style="--pgbar-length: 50%"></div>
+			<div class="bar" style="--pgbar-length: 50%"></div>
+		  </div>
+		</li>
+		<li data-percent="50"><span>JavaScript</span>
+		  <div class="skills-bar">
+			<div class="fbar" style="--pgbar-length: 50%"></div>
+			<div class="bar" style="--pgbar-length: 50%"></div>
+		  </div>
+		</li>
+		<li data-percent="50"><span>jQuery</span>
+		  <div class="skills-bar">
+			<div class="fbar" style="--pgbar-length: 50%"></div>
+			<div class="bar" style="--pgbar-length: 50%"></div>
+		  </div>
+		</li>
+		<li data-percent="40"><span>Java</span>
+		  <div class="skills-bar">
+			<div class="fbar" style="--pgbar-length: 40%"></div>
+			<div class="bar" style="--pgbar-length: 40%"></div>
+		  </div>
+		</li>
+		<li data-percent="30"><span>Python</span>
+		  <div class="skills-bar">
+			<div class="fbar" style="--pgbar-length: 30%"></div>
+			<div class="bar" style="--pgbar-length: 30%"></div>
+		  </div>
+		</li>
+	  </ul>
+	</div>
+	<div class="skills-soft">
+	  <h1><i class="icon-bar-chart"></i> Statistical Software</h1>
+	  <ul>
+		<li data-percent="80">
+		  <svg viewbox="0 0 100 100">
+			<circle cx="50" cy="50" r="45"></circle>
+			<circle class="cbar" cx="50" cy="50" r="45" style="--percent: 0.8"></circle>
+		  </svg><span>EXCEL</span><small>90%</small>
+		</li>
+		<li data-percent="80">
+		  <svg viewbox="0 0 100 100">
+			<circle cx="50" cy="50" r="45"></circle>
+			<circle class="cbar" cx="50" cy="50" r="45" style="--percent: 0.8"></circle>
+		  </svg><span>SPSS</span><small>80%</small>
+		</li>
+		<li data-percent="75">
+		  <svg viewbox="0 0 100 100">
+			<circle cx="50" cy="50" r="45"></circle>
+			<circle class="cbar" cx="50" cy="50" r="45" style="--percent: 0.75"></circle>
+		  </svg><span>EVIEWS</span><small>75%</small>
+		</li>
+		<li data-percent="60">
+		  <svg viewbox="0 0 100 100">
+			<circle cx="50" cy="50" r="45"></circle>
+			<circle class="cbar" cx="50" cy="50" r="45" style="--percent: 0.6"></circle>
+		  </svg><span>R</span><small>60%</small>
+		</li>
+	  </ul>
+	</div>
+	<!--<div class="interests">
+	  <h1><i class="icon-star"></i> Interests</h1>
+	  <div class="interests-items">
+		<div class="art"><i class="icon-palette"></i><span>Art</span></div>
+		<div class="art"><i class="icon-book"></i><span>Books</span></div>
+		<div class="movies"><i class="icon-film"></i><span>Movies</span></div>
+		<div class="music"><i class="icon-headphones"></i><span>Music</span></div>
+		<div class="games"><i class="icon-gamepad"></i><span>Games</span></div>
+	  </div>
+	</div>-->
+  </div>
+</div>
+<script>
+const themeBtn = document.getElementById('change-theme');
+const themeIcon = document.getElementById('theme-icon');
+const imgstr = document.querySelectorAll('img.imgstr');
+let isModified = false;
+themeBtn.addEventListener('click', () => {
+  const root = document.documentElement;
+  if (!isModified) {
+	root.style.setProperty('--color-val10', '#1a1a1a');
+	root.style.setProperty('--color-val09', '#333333');
+	root.style.setProperty('--color-val08', '#4d4d4d');
+	root.style.setProperty('--color-val07', '#666666');
+	root.style.setProperty('--color-val06', '#808080');
+	root.style.setProperty('--color-val05', '#999999');
+	root.style.setProperty('--color-val04', '#b3b3b3');
+	root.style.setProperty('--color-val03', '#cccccc');
+	root.style.setProperty('--color-val02', '#e6e6e6');
+	root.style.setProperty('--color-val01', '#f2f2f2');
+	root.style.setProperty('--blue2', '#3282F6');
+	root.style.setProperty('--blue1', '#2664BD');
+    themeIcon.classList.remove('icon-moon');
+    themeIcon.classList.add('icon-sun');
+	imgstr.forEach(img => {
+	  img.style.setProperty('filter', 'invert(100%)');
+    });
+	isModified = true;
+  } else {
+    // 2nd Click: Remove JS properties to reload original CSS values
+    root.style.removeProperty('--color-val10');
+    root.style.removeProperty('--color-val09');
+    root.style.removeProperty('--color-val08');
+    root.style.removeProperty('--color-val07');
+    root.style.removeProperty('--color-val06');
+    root.style.removeProperty('--color-val05');
+    root.style.removeProperty('--color-val04');
+    root.style.removeProperty('--color-val03');
+    root.style.removeProperty('--color-val02');
+    root.style.removeProperty('--color-val01');
+    root.style.removeProperty('--blue2');
+    root.style.removeProperty('--blue1');
+	themeIcon.classList.remove('icon-sun');
+	themeIcon.classList.add('icon-moon');
+	imgstr.forEach(img => {
+	  img.style.removeProperty('filter');
+    });
+    isModified = false;
+  }
+});
+</script>
