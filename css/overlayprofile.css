@@ -1,0 +1,192 @@
+:root {
+	--color-lighter: #F2F2F2;
+	--color-light:  rgba(150,150,150,0.5);
+	--color-normal: #CCCCCC;
+	--color-dark: #636363;
+	--color-darker: #222222;
+}
+.overlayprofile {
+	position: relative;
+	height: 180px;
+	width: 380px;
+	margin: 30px auto;
+	padding: 20px;
+	background: var(--color-lighter) url('../photos/DSC_903.png') right 1px bottom no-repeat;
+	background-size: contain; 
+	z-index: 1;
+	will-change: transform;
+	transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+	transform: scale(0.9) translateZ(-10px) translateY(-18px) translateX(-18px) /* rotate(2deg)  rotateX(5deg) rotateY(-5deg)  rotateZ(-5deg) skew(20deg, 20deg)*/;
+	transform-origin: 50% 50%;
+	transform-style: preserve-3d;
+	cursor: pointer;
+	box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+.overlayprofile::after {
+	content: "";
+	position: absolute;
+	background: url('../design/divider.png') no-repeat center top ;
+	width: 100%;
+	height: 30px;
+	bottom: -30px;
+	left: 0;
+	z-index: -1;
+}
+.overlayprofile:hover {
+	transform: scale(1.1) translateZ(0px) translateY(0px) translateX(0px)  rotate(0deg);
+	cursor: pointer;
+	box-shadow: 7px 5px 5px rgba(0, 0, 0, .5);
+}
+.overlayprofile .info {
+	margin: 5px 1px;
+	top: 10px;
+	left: 0;
+	float: left;
+	position: relative;
+	z-index: 1;
+	font-weight: bold;
+	color: var(--color-darker);
+	text-align: left;
+}
+.overlayprofile .info .name {
+	width: 180px;
+	font-size: 19px;
+	font-weight: 700;
+	margin-bottom: 4px;
+	border-bottom: 3px solid red;
+	white-space: nowrap;
+}
+.overlayprofile .info .title {
+	font-size: 8.5px;
+	font-weight: 500;
+	opacity: 0.9;
+}
+.overlayprofile li {
+	padding: 0;
+	margin: 0;
+	vertical-align: middle;
+	line-height: 20px;
+	white-space: nowrap;
+	text-align: left;
+}
+.overlayprofile ul {
+	list-style-image: none;
+	padding: 0;
+	margin: 0;
+}
+.overlayprofile li a.framed {
+	padding: 0 10px;
+	margin: 5px 2px;
+	text-align: left;
+	vertical-align: middle;
+	line-height: 20px;
+	display: block;
+	white-space: nowrap;
+	color: var(--color-darker);
+	border: 1px solid var(--color-darker);
+	border-radius: 10px;
+	background: var(--color-light);
+	-webkit-box-shadow: inset 0px 0px 10px 1px var(--color-normal);
+	-moz-box-shadow: inset 0px 0px 10px 1px var(--color-normal);
+	box-shadow: 0px 0px 5px 1px var(--color-normal);
+	text-shadow: 0 0 10px var(--color-normal), 0 0 2px var(--color-normal);
+}
+.overlayprofile li a.framed:hover {
+	color: var(--color-lighter);
+	background: var(--color-darker);
+	border: 1px solid var(--color-lighter);
+	-webkit-box-shadow: inset 0px 0px 10px 1px var(--color-darker);
+	-moz-box-shadow: inset 0px 0px 10px 1px var(--color-darker);
+	box-shadow: 0px 0px 5px 1px var(--color-darker);
+}
+.overlayprofile li a.framed img {
+	transition: filter 0.3s ease;
+	padding: 0;
+	margin: 0;
+	height: 18px;
+	vertical-align: -18%;
+}
+.overlayprofile li a.framed:hover img {
+	filter: invert(100%);
+	-webkit-filter: invert(100%);
+}
+.overlayprofile .programming {
+	margin: 10px 0;
+	left:0;
+	width:180px;
+	white-space: nowrap;
+}
+.overlayprofile .skills-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0;
+	justify-content: center;
+}
+.overlayprofile .skills-list li {
+	transition: transform 0.3s ease;
+}
+.overlayprofile .skills-list li:hover {
+	transform: translateY(-8px) scale(1.08);
+}
+.overlayprofile .skills-list img.icon {
+	width: 20px;
+	height: 20px;
+	object-fit: contain;
+	filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+	transition: filter 0.3s ease;
+}
+.overlayprofile .skills-list li:hover img.icon {
+	filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.2));
+}
+.overlayprofile .social {
+	clear: both;
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+	left: 0;
+	padding: 5px 5px 0;
+	margin: 0;
+	width: 150px;
+	background: transparent;
+	white-space: nowrap;
+	text-align: center;
+	display: block;
+}
+.overlayprofile .social a {
+	background-color: #dddddd;
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    line-height: 13px;
+    font-size: 7px;
+	padding: 0;
+	margin: 0;
+    border-radius: 50%;
+    vertical-align: middle; 
+    text-align: center;
+	transition: all 0.3s ease;
+}
+.overlayprofile .social a:hover {
+	background-color: #ffffff;
+	font-size: 10px;
+}
+@media screen and (max-width: 550px) {
+    background-color: #ffffff;
+	.overlayprofile {
+	 margin: 20px auto;
+	 transform: scale(1) translateZ(0px) translateY(0px) translateX(0px)  rotate(0deg);
+	 border: none;
+	 border-radius: 0;
+	 box-shadow: none;
+	 opacity: 0.95;
+	}
+	.overlayprofile:hover {
+	 transform: scale(1.05);
+	}
+	.overlayprofile .wave {
+	 display: none;
+	}
+}

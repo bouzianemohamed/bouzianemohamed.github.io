@@ -1,0 +1,169 @@
+:root {
+/*  --text-primary: #1A1A1A;
+  --color-val08: #333333;
+  --text-muted: #4D4D4D;
+  --color-val06: #666666;
+  --color-val05: #808080;
+  --color-val04: #999999;
+  --color-val03: #B3B3B3;
+  --color-val02: #CCCCCC;
+  --color-white: #FFFFFF;
+	--color-white: #CFE3FF;
+	--color-val03: #A5B5CC;
+	--color-val06: #919FB3;
+	--color-val04: #7C8899;
+	--color-val05: #677180;
+	--color-val06: #535A66;
+	--color-val07: #3E444D;
+	--color-val08: #292D33;
+	--color-val09: #15171A;
+	--color-val09: #15171A;
+	--color-val08: #292D33;
+	--color-val07: #3E444D;
+	--color-val06: #535A66;
+	--color-val05: #677180;
+	--color-val04: #7C8899;
+	--color-val03: #919FB3;
+	--color-val02: #A5B5CC;
+	--light: #FFFFFF;
+	--dark: #FFFFFF;*/
+	--color-val10: #F2F2F2;
+	--color-val09: #E6E6E6;
+	--color-val08: #CCCCCC;
+	--color-val07: #B3B3B3;
+	--color-val06: #999999;
+	--color-val05: #808080;
+	--color-val04: #666666;
+	--color-val03: #4D4D4D;
+	--color-val02: #333333;
+	--color-val01: #1A1A1A;
+	--dark: #0e1442;
+	--light: #ffffff;
+	--radius: 8px;
+	--shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+#login {
+	background: var(--color-val08);
+	color: var(--color-val01);
+	margin: 1px auto;
+	width: 350px;
+	height: 320px;
+	overflow: hidden;
+	box-shadow: 1px 1px 0px var(--light);
+	border: 1px solid var(--dark);
+}
+.legend {
+	background: var(--color-val03);
+	color: var(--color-val09);
+	padding: 20px;
+	font-size: 1.25rem;
+	font-weight: 700;
+	text-align: center;
+	letter-spacing: 0.5px;
+	border-bottom: 1px solid var(--dark);
+}
+#login-form {
+	padding: 25px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	border-top: 1px solid var(--light);
+}
+.input-group {
+	display: flex;
+	align-items: center;
+	background: var(--color-val07);
+	border-radius: var(--radius);
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#login .input-group:hover {
+	background: var(--color-val06);
+	transform: translateY(-1px);
+}
+.input-group:focus-within {
+	background: var(--color-val07);
+	border-color: var(--color-val03);
+	box-shadow: var(--shadow);
+	transform: translateY(-2px);
+}
+.input-group span {
+	color: var(--color-val04);
+	border-right: 1px solid var(--dark);
+	width: 50px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 0.95rem;
+}
+.input-group span:hover {
+	color: var(--color-val02);
+}
+#login input[type="text"],
+#login input[type="password"] {
+	background: transparent;
+	color: var(--color-val01);
+	border: none;
+	outline: none;
+	border-left: 1px solid var(--light);
+	flex: 1;
+	padding: 0 15px;
+	height: 50px;
+	font-size: 0.95rem;
+	border-radius: 0;
+	border-top-right-radius: var(--radius);
+	border-bottom-right-radius: var(--radius);
+}
+#login input::placeholder {
+	color: var(--color-val05);
+}
+#login input[type="submit"] {
+	background: var(--color-val04);
+	color: var(--color-val08);
+	margin-top: 10px;
+	width: 100%;
+	height: 50px;
+	border: none;
+	border-radius: var(--radius);
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+}
+#login input[type="submit"]:hover {
+	background: var(--color-val02);
+	color: var(--color-val09);
+	transform: translateY(-2px);
+	box-shadow: var(--shadow);
+}
+#login .info {
+	margin: 0;
+	padding: 80px 20px 0;
+	color: var(--color-val04);
+	font-size: 0.95rem;
+	font-weight: 400;
+	text-align: center;
+	border-top: 1px solid var(--light);
+	line-height: 1.4;
+}
+#login .info a {
+	color: var(--color-val02);
+	font-size: 0.95rem;
+	font-weight: 600;
+	text-decoration: none;
+	transition: all 0.2s ease;
+}
+#login .info a:hover {
+	color: var(--color-val01);
+	text-decoration: underline;
+}
+@media screen and (max-width: 550px) {
+ #login {
+	 margin: 10px auto;
+	 width: 100%;
+	 height: 100%;
+	 border-radius: 0;
+	 background: var(--light);
+ }
+}

@@ -1,0 +1,64 @@
+#overlayimage {
+	position: relative;
+	margin: 5px auto;
+	padding: 0;
+	width: 532px;
+}
+#overlayimage .middle {
+	position: relative;
+	padding: 20px 40px;
+	background: url('./imageoverlaymiddle.png') repeat-y left top;
+}
+#overlayimage .top {
+	height: 19px;
+	background: url('./imageoverlaytop.png') no-repeat left top;
+}
+#overlayimage .bottom {
+	height: 43px;
+	background: url('./imageoverlaybottom.png') no-repeat left top;
+}
+#overlayimage .quote {
+	display: block;
+	margin: 10px 0;
+	text-align: center;
+	line-height: 1.4;
+	font-size: 15px;
+	font-family: "Georgia", serif;
+	font-style: italic;
+	color: #333;
+}
+#overlayimage .caption {
+	position: absolute;
+	right: 45px;
+	text-align: right;
+	font-weight: bold;
+	color: #333;
+	margin-bottom: 15px;
+}
+#overlayimage .date {
+	position: absolute;
+	left: 45px;
+	text-align: left;
+	font-weight: bold;
+	color: #333;
+	margin-bottom: 15px;
+}
+.navline {
+	margin-top: 35px;
+	font-size: 12px;
+	border-top: 1px solid #eee;
+	padding-top: 5px;
+}
+@media (max-width: 550px) {
+	#overlayimage {
+	 border: none;
+	 opacity: 0.95;
+	 background: white;
+	}
+	#overlayimage .top, #overlayimage .bottom {
+	 display: none;
+	}
+	#overlayimage .middle {
+	 background: white;
+	}
+}

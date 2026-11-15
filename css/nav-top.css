@@ -1,0 +1,120 @@
+:root {
+	--nav-bg: rgba(255, 255, 255, 0.05);
+	--nav-hover: rgba(255, 255, 255, 0.12);
+	--nav-selected: rgba(255, 255, 255, 0.15);
+	--border-color: rgba(255, 255, 255, 0.12);
+	--text-color: #f3f4f6;
+	--text-hover: #ffffff;
+	--radius-main: 20px;
+	--glass-effect: blur(12px) saturate(180%);
+	--transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --nav-bg: rgba(0, 0, 0, 0.03);
+    --nav-hover: rgba(0, 0, 0, 0.08);
+    --nav-selected: rgba(0, 0, 0, 0.12);
+    --border-color: rgba(0, 0, 0, 0.08);
+    --text-color: #374151;
+    --text-hover: #111827;
+  }
+}
+#topnavigationlist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
+  list-style: none;
+  padding: 5px;
+  margin: 0;
+  width: max-content;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+  direction: ltr;
+}
+#topnavigationlist a.toplevel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 16px;
+  font-size: 100%;
+  font-weight: 600;
+  background: var(--nav-bg);
+  backdrop-filter: var(--glass-effect);
+  -webkit-backdrop-filter: var(--glass-effect);
+  color: var(--text-color);
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: none; 
+  transition: 
+    background-color 0.2s var(--transition-smooth, ease), 
+    color 0.2s var(--transition-smooth, ease), 
+    border-color 0.2s var(--transition-smooth, ease);
+}
+#topnavigationlist li:last-child a.toplevel { 
+  border-top-right-radius: var(--radius-main); 
+  border-bottom-right-radius: var(--radius-main); 
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+#topnavigationlist li:first-child a.toplevel { 
+  border-top-left-radius: var(--radius-main); 
+  border-bottom-left-radius: var(--radius-main); 
+} 
+#topnavigationlist a.toplevel:hover,
+#topnavigationlist a.toplevel:focus-visible {
+  border-color: var(--text-hover);
+  background: var(--nav-hover);
+  color: var(--text-hover);
+  outline: none;
+}
+#topnavigationlist li:not(:last-child) a.toplevel:hover,
+#topnavigationlist li:not(:last-child) a.selected {
+  border-right: 1px solid var(--text-hover);
+  margin-right: -1px;
+}
+
+#topnavigationlist a.selected {
+  border: 1px solid var(--text-hover);
+  background: var(--nav-selected);
+  color: var(--text-hover);
+  filter: grayscale(50%);
+}
+
+#topnavigationlist a.toplevel img {
+  height: 16px;
+  width: 16px;
+  object-fit: cover;
+  transition: filter 0.2s ease;
+}
+#topnavigationlist a.toplevel:hover img {
+  filter: brightness(90%);
+}
+.isDisabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+}
+@media screen and (max-width: 600px) {
+  #topnavigationlist {
+    max-width: 100%;
+    border: 1px solid #888888;
+    border-radius: var(--radius-main);
+    padding: 0;
+  }
+  
+  #topnavigationlist a.toplevel {
+    font-size: 80%;
+    color: #666666;
+    border: none;
+    border-bottom: 1px solid #888888;
+  }
+  #topnavigationlist li:last-child a.toplevel {
+    border-bottom: none;
+  }
+  #topnavigationlist a.toplevel:hover {
+    color: #000000;
+    background: #cccccc;
+  }
+    #topnavigationlist a.toplevel span {
+        display: none;
+    }
+}
