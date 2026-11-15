@@ -1,0 +1,142 @@
+@media screen and (min-width: 551px) {
+	.resume {
+	  background: transparent;
+	  width: 100%;
+	  margin: 0 auto;
+	  padding: 0;
+	  display: flex;
+	  flex-direction: column;
+	  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+	}
+	.resume .base {
+	  display: flex;
+	  flex-wrap: wrap;
+	  gap: 0px;
+	  width: 100%;
+	  align-items: stretch;
+	  margin: 0;
+	  padding: 0;
+	  border-top-left-radius: var(--radius-s);
+	  border-top-right-radius: var(--radius-s);
+	}
+	.resume .base .profile {
+	  width: 35%; /*calc(40% - 5px)*/
+	  display: flex;
+	  flex-direction: column;
+	  padding: 10px 10px 20px;
+	  margin: 0;
+	  border-top-left-radius: var(--radius-s);
+	  border-right: 1px solid var(--dark);
+	}
+	.resume .base .profile::after {
+	  width: 100%;
+	  height: 20px;
+	  bottom: 0;
+	  left: 0;
+	  transform: skewY(0deg);
+	  border-bottom: 1px solid var(--dark);
+	  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+	}
+	.resume .base .about {
+	  width: 65%;/*calc(60% - 5px)*/
+	  display: flex;
+	  flex-direction: column;
+	  margin: 0;
+	  border-top-right-radius: var(--radius-s);
+	  border-left: 1px solid var(--light);
+	}
+	.resume .base .profile > *,
+	.resume .base .about > * {
+	  flex: 1;
+	}
+	.resume .base .contact,
+	.resume .base .follow {
+	  width: 100%;
+	  padding: 10px;
+	  border-top: 1px solid var(--light);
+	  border-bottom: 1px solid var(--dark);
+	}
+	.resume .base .about {
+	  border-bottom: 1px solid var(--dark);
+	}
+	.resume .base .contact {
+	  display: flex;
+	  flex-wrap: wrap;
+	  gap: 0px;
+	}
+	.resume .base .contact h1 {
+	  flex: 0 0 100%;
+	  margin: 0 0 5px 0;
+	}
+	.resume .base .contact .call,
+	.resume .base .contact .address,
+	.resume .base .contact .email,
+	.resume .base .contact .website {
+	  flex: 0 0 calc(50% - 0px);
+	  box-sizing: border-box;
+	  margin: 0;
+	  padding: 0;
+	}
+	.resume .base .follow .box {
+	  display: flex;
+	  flex-direction: row;
+	  text-align: center;
+	  margin: 0;
+	  padding: 0;
+	}
+    .resume .base .follow .box i {
+        font-size: 15px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        margin: 0 5px 5px 5px;
+    }
+	.resume .func {
+	  box-sizing: border-box;
+	  width: 100%;
+	  margin: 0;
+	  padding: 0;
+	  box-shadow: none;
+	  float: none;
+	  border-bottom-left-radius: var(--radius-s);
+	  border-bottom-right-radius: var(--radius-s);
+	  gap: 0px;
+	}
+    .resume .func:hover > div:not(:hover) {
+      opacity: 1;
+    }
+	.resume .func > div {
+	 border: none;
+	 border-radius: 0;
+	}
+	.resume .func .work,
+	.resume .func .skills {
+	  clear: both;
+	  float: none;
+	  width: 100%;
+	  height: 100%;
+	}
+	.resume .base .profile { background: var(--color-val09);}
+	.resume .base .profile .info .name, .resume .base .profile .info .job { color: var(--color-val02); }
+	.resume .base .profile::after { background: var(--blue1);}
+	.resume .base .about,
+	.resume .base .contact,
+	.resume .base .follow { background: var(--color-val08); }
+	.resume .func .work,
+	.resume .func .skills,
+	.resume .func .edu,
+	.resume .func .sci,
+	.resume .func .skills-prog,
+	.resume .func .skills-soft,
+	.resume .func .interests {
+	  background-color: var(--color-val08);
+	  border-top: 1px solid var(--light);
+	  border-bottom: 1px solid var(--dark);
+	  margin: 0;
+	  padding: 10px;
+	}
+	.resume .func .skills-soft {
+	  border-bottom-left-radius: var(--radius-s);
+	  border-bottom-right-radius: var(--radius-s);
+	}
+}

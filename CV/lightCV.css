@@ -1,0 +1,782 @@
+:root {
+	--color-val10: #F2F2F2;
+	--color-val09: #E6E6E6;
+	--color-val08: #CCCCCC;
+	--color-val07: #B3B3B3;
+	--color-val06: #999999;
+	--color-val05: #808080;
+	--color-val04: #666666;
+	--color-val03: #4D4D4D;
+	--color-val02: #333333;
+	--color-val01: #1A1A1A;
+	--dark: #0e1442;
+	--light: #ffffff;
+	--orange: #ffb300;
+	--yellow: #fdd835;
+	--blue1: #3282F6;
+	--blue2: #2664BD;
+	--red: #FF0000;
+	--dark-pink: #992354;
+	--light-pink: #FF1D80;
+	--resume-width: 960px;
+	--pgbar-length: 100%;
+	--percent: 100;
+	--MATH-PI: 3.1415;
+	--radius-s: 8px;
+}
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
+}
+.resume {
+	font-family: "Roboto", "Times New Roman", serif;
+	width: var(--resume-width);
+	background: var(--color-val10);
+	color: var(--color-val02);
+	margin: 20px auto;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+}
+.resume a {
+	text-decoration: none;
+	color: var(--color-val01);
+	display: block;
+	transition-duration: 0.3s;
+}
+.resume ul {
+	list-style-type: none;
+	padding: 0;
+}
+.resume h1, .resume h2, .resume h3, .resume h4 {
+	font-family: "Bitter", "Montserrat";
+	text-transform: uppercase;
+	margin: 0;
+	padding: 0;
+}
+.resume h1 {
+	font-size: 140%;
+	margin-bottom: 10px;
+}
+.resume h2 {
+	font-size: 100%;
+}
+.resume h3 {
+	font-size: 70%;
+}
+.resume h4 {
+	font-size: 50%;
+}
+.resume .base,
+.resume .func {
+	box-sizing: border-box;
+	float: left;
+}
+.resume .base > div,
+.resume .func > div {
+	padding-bottom: 10px;
+}
+.resume .base > div:last-of-type,
+.resume .func > div:last-of-type {
+	padding-bottom: 0;
+}
+.resume .base {
+	width: 25%;
+	padding: 30px 15px;
+	background: var(--color-val09);
+	color: var(--color-val01);
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+.resume .func {
+	width: 75%;
+	padding: 20px;
+}
+.resume .func > div {
+	border: 1px solid var(--color-val08);
+	border-radius: var(--radius-s);
+}
+.resume .base .profile {
+	background: var(--color-val07);
+	padding: 30px 15px 40px 15px;
+	margin: -30px -15px 40px -15px;
+	position: relative;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+	z-index: 1;
+}
+.resume .base .profile::after {
+	content: "";
+	position: absolute;
+	background: var(--yellow);
+	width: 100%;
+	height: 30px;
+	bottom: -15px;
+	left: 0;
+	transform: skewY(-5deg);
+	z-index: -1;
+}
+.resume .base .profile .photo img {
+	width: 100%;
+	border-radius: 50%;
+}
+.resume .base .profile .photo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.resume .base .profile .info {
+	text-align: center;
+}
+.resume .base .profile .info .name,
+.resume .base .profile .info .job {
+	margin-top: 10px;
+	margin-bottom: 0;
+}
+.resume .base .profile .info .name {
+	font-size: 1em;
+	text-transform: uppercase;
+}
+.resume .base .profile .info .job {
+	font-family: "League Gothic", sans-serif;
+	font-size: 1em;
+	text-transform: lowercase;
+}
+.resume .base .about {
+	text-align: justify;
+	padding: 7px;
+}
+.resume .base .contact div {
+	line-height: 24px;
+}
+.resume .base .contact div a {
+	/*color: var(--dark);
+	background: var(--light);*/
+	padding: 5px 8px;
+	margin: 0;
+}
+.resume .base .contact div a:hover {
+	color: var(--blue2);
+}
+.resume .base .contact div a .imgstr {
+  transition: filter 0.3s ease;
+}
+.resume .base .contact div i {
+	color: var(--blue2);
+	width: 20px;
+	height: 20px;
+	font-size: 20px;
+	text-align: center;
+	margin-right: 10px;
+	transition-duration: 0.3s;
+}
+.resume .base .contact div:hover i {
+	color: var(--blue2);
+}
+.resume .base .contact div span {
+	position: relative;
+}
+.resume .base .contact div span::after {
+	content: "";
+	position: absolute;
+	background: var(--blue1);
+	height: 2px;
+	width: 0;
+	bottom: 0;
+	left: 0;
+	transition-duration: 0.2s;
+}
+.resume .base .contact div a:hover span::after {
+	width: 100%;
+}
+.resume .base .follow .box {
+	text-align: center;
+	vertical-align: middle;
+}
+.resume .base .follow .box a {
+	color: var(--light);
+	display: inline-block;
+	vertical-align: text-bottom;
+}
+.resume .base .follow .box a:hover i {
+	transform: scale(1.3);
+}
+.resume .base .follow .box i {
+	display: inline-block;
+	font-size: 180%;
+	background: var(--dark);
+	color: var(--light);
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	line-height: 40px;
+	margin: 0 10px 10px 10px;
+	transition-duration: 0.3s;
+}
+.resume .base .follow .box i.txt {
+	color: var(--light);
+	font-style: normal;
+	font-weight: 700;
+	font-size: 130%;
+	text-align: center;
+	vertical-align: middle;
+}
+.resume .base .follow .box a:hover i::before {
+	transform: scale(1.1);
+}
+.resume .base .follow .box i::before {
+	transition-duration: 0.3s;
+}
+.resume .base .follow .box i.fa::before {
+	display: block;
+}
+.resume .func:hover > div {
+	transition-duration: 0.5s;
+}
+.resume .func:hover > div:hover h1 {
+	letter-spacing: 1px;
+	border-radius: 21px;
+	background-color: var(--dark);
+	color: var(--light);
+}
+.resume .func:hover > div:hover h1 i {
+	transform: rotate(90deg) scale(1.5);
+	margin-right: 0.3rem;
+	background-color: var(--blue1);
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	
+}
+.resume .func:hover > div:not(:hover) {
+	opacity: 0.95;
+}
+.resume .func h1 {
+	color: var(--color-val03);
+	transition-duration: 0.5s;
+	margin-top: 0;
+	white-space: nowrap;
+	height: 42px;
+}
+.resume .func h1 i {
+	background-color: var(--blue2);
+	color: var(--light);
+	width: 42px;
+	height: 42px;
+	font-size: 20px;
+	line-height: 42px;
+	border-radius: 50%;
+	text-align: center;
+	vertical-align: middle;
+	margin-right: 5px;
+	transition-duration: 0.5s;
+	padding: 10px;
+}
+.resume .func .work,
+.resume .func .skills {
+	float: left;
+	/* background: var(--color-val08); */
+	padding: 10px;
+	width: 48%;
+	height: 350px;
+}
+.resume .func .work {
+	margin: 0 4% 15px 0;
+}
+.resume .func .skills {
+	margin: 0;
+}
+.resume .func .edu,
+.resume .func .sci {
+	clear: both;
+	/* background: var(--color-val08); */
+	padding: 10px;
+	margin: 15px 0 0;
+}
+.resume .func .work small,
+.resume .func .skills small,
+.resume .func .edu small,
+.resume .func .sci small {
+	display: block;
+	opacity: 0.9;
+}
+.resume .func .edu li span,
+.resume .func .sci li span {
+	position: relative;
+	display: block;
+	padding-right: 120px;
+}
+.resume .func .work li strong,
+.resume .func .skills li strong,
+.resume .func .edu li strong,
+.resume .func .sci li strong {
+	color: var(--color-val10);
+	background-color: var(--color-val01);
+	padding: 1px 8px;
+	border-radius: var(--radius-s);
+}
+.resume .func .work li span,
+.resume .func .edu ul li span {
+	padding-right: 50px;
+}
+.resume .func .work li span i,
+.resume .func .edu li span i {
+	color: var(--color-val08);
+	position: absolute;
+	top: 5px;
+	right: 1px;
+	font-size: 50%;
+	font-style: normal;
+	text-align: right;
+	white-space: nowrap;
+	transition: all .3s ease;
+}
+.resume .func .work li span:hover i,
+.resume .func .edu li span:hover i {
+	color: var(--color-val03);
+	top: 3px;
+	font-size: 75%;
+}
+.resume .func .work ul li,
+.resume .func .skills ul li,
+.resume .func .edu ul li,
+.resume .func .sci ul li {
+	position: relative;
+	margin-left: 15px;
+	padding-left: 25px;
+	padding-bottom: 15px;
+}
+.resume .func .work ul li:last-of-type,
+.resume .func .skills ul li:last-of-type,
+.resume .func .edu ul li:last-of-type,
+.resume .func .sci ul li:last-of-type {
+	padding-bottom: 3px;
+}
+.resume .func .work ul li span,
+.resume .func .skills ul li span,
+.resume .func .edu ul li span,
+.resume .func .sci ul li span {
+	transition-duration: 0.3s;
+	font-weight: 400;
+}
+.resume .func .work ul li:hover span,
+.resume .func .skills ul li:hover span,
+.resume .func .edu ul li:hover span,
+.resume .func .sci ul li:hover {
+	color: var(--color-val03);
+}
+.resume .func .work ul li::before,
+.resume .func .work ul li::after,
+.resume .func .skills ul li::before,
+.resume .func .skills ul li::after,
+.resume .func .edu ul li::before,
+.resume .func .edu ul li::after,
+.resume .func .sci ul li::before,
+.resume .func .sci ul li::after {
+	content: "";
+	display: block;
+	position: absolute;
+}
+.resume .func .work ul li::before,
+.resume .func .skills ul li::before,
+.resume .func .edu ul li::before,
+.resume .func .sci ul li::before {
+	width: 15px;
+	height: 15px;
+	border: 3px solid var(--color-val01);
+	background-color: var(--color-val09);
+	border-radius: 50%;
+	left: -1px;
+	top: 2px;
+	z-index: 1;
+}
+.resume .func .sci ul li::before {
+	border: 3px solid var(--color-val01);
+	background: var(--color-val10);
+}
+.resume .func .work ul li:first-of-type::before,
+/*.resume .func .skills ul li:first-of-type::before,*/
+.resume .func .edu ul li:first-of-type::before {
+	width: 20px;
+	height: 20px;
+	left: -3px;
+	top: -1px;
+}
+.resume .func .work ul li:hover::before,
+.resume .func .skills ul li:hover::before,
+.resume .func .edu ul li:hover::before,
+.resume .func .sci ul li:hover::before {
+	animation: pulse 1.2s infinite;
+	border: 3px solid var(--dark-pink);
+}
+.resume .func .work ul li::after,
+/* .resume .func .skills ul li::after, */
+.resume .func .edu ul li::after {
+	width: 3px;
+	height: 100%;
+	background-color: var(--color-val01);
+	left: 5px;
+	top: 0;
+}
+.resume .func .work ul li:last-of-type::after,
+.resume .func .skills ul li:last-of-type::after,
+.resume .func .edu ul li:last-of-type::after {
+	border-bottom-right-radius: 1.5px;
+	border-bottom-left-radius: 1.5px;
+}
+.resume .func .skills-prog,
+.resume .func .skills-soft {
+	clear: both;
+	/* background: var(--color-val08); */
+	padding: 10px;
+	margin: 15px 0 0;
+}
+.resume .func .skills-prog ul {
+	margin-left: 15px;
+}
+.resume .func .skills-prog ul li {
+	font-weight: 300;
+	text-transform: uppercase;
+	margin-bottom: 8px;
+	display: flex;
+	align-items: center;
+	transition: font-weight .4s ease-in-out;
+}
+.resume .func .skills-prog ul li span {
+	font-weight: 700;
+	display: block;
+	width: 130px;
+	padding: 2px 10px ;
+	margin-right: 10px;
+	white-space: nowrap;
+	line-height: 20px;
+}
+.resume .func .skills-prog ul li:hover {
+	font-weight: 500;
+	color: var(--color-val09);
+	background-color: var(--color-val02);
+	border-radius: 10px;
+	transition: color, background-color .5s ease-in-out;
+}
+.resume .func .skills-prog ul li .skills-bar {
+	background-color: var(--color-val01);
+	border: 1px solid var(--light);
+	height: 3px;
+	width: calc(100% - 170px);
+	position: relative;
+	border-radius: 2px;
+}
+.resume .func .skills-prog ul li .skills-bar .fbar,
+.resume .func .skills-prog ul li .skills-bar .bar {
+	position: absolute;
+	top: -1px;
+	height: 4px;
+	background-color: var(--orange);
+	box-shadow: 0 0 0 var(--orange);
+	border-radius: 2px;
+	left: 0;
+	width: var(--pgbar-length);
+	transition: 0.5s linear;
+	transition-property: background-color;
+}
+.resume .func .skills-prog ul li:hover .skills-bar .bar {
+	background-color: var(--red);
+	box-shadow: 0 0 0 1px var(--red);
+	animation: progress 2s forwards;
+}
+.resume .func .skills-soft ul {
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+}
+.resume .func .skills-soft ul li {
+	position: relative;
+}
+.resume .func .skills-soft ul li:hover span,
+.resume .func .skills-soft ul li:hover small {
+	transform: scale(1.2);
+}
+.resume .func .skills-soft ul li svg {
+	width: 95%;
+	fill: transparent;
+	transform: rotate(-90deg);
+}
+.resume .func .skills-soft ul li svg circle {
+	stroke-width: 1px;
+	stroke: var(--color-val01);
+}
+.resume .func .skills-soft ul li svg .cbar {
+	stroke-width: 3px;
+	stroke: var(--orange);
+	stroke-linecap: round;
+	stroke-dashoffset: 0;
+	stroke-dasharray: calc(var(--MATH-PI) * 45 * 2);
+	transition: all 0.8s;
+	transition-timing-function: cubic-bezier(.64,.51,.16,.86);
+}
+.resume .func .skills-soft ul li:hover svg .cbar {
+	stroke-width: 4px;
+	stroke: var(--yellow);
+	stroke-dashoffset: calc(var(--MATH-PI) * 45 * 2 * (1 - var(--percent)));
+}
+.resume .func .skills-soft ul li span,
+.resume .func .skills-soft ul li small {
+	position: absolute;
+	display: block;
+	width: 100%;
+	top: 52%;
+	transition-duration: 0.3s;
+}
+.resume .func .skills-soft ul li span {
+	top: 40%;
+}
+.resume .func .interests {
+	background: var(--color-val08);
+	margin: 15px 0 0;
+	padding: 15px;
+}
+.resume .func .interests-items {
+	box-sizing: border-box;
+	padding: 0 0 15px;
+	width: 100%;
+	text-align: center;
+	display: flex;
+	justify-content: space-between;
+}
+.resume .func .interests-items div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+}
+.resume .func .interests-items div:hover i {
+	transform: scale(1.2);
+}
+.resume .func .interests-items div:hover span {
+	color: var(--yellow);
+	transition-duration: 0.3s;
+}
+.resume .func .interests-items div i {
+	font-size: 45px;
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	color: var(--color-val02);
+	transition-duration: 0.3s;
+}
+.resume .func .interests-items div span {
+	display: block;
+}
+
+@keyframes pulse {
+	0% {
+	  box-shadow: 0 0 0 0px rgba(255, 0, 0, 1);
+	}
+	100% {
+	  box-shadow: 0 0 0 6px rgba(255, 0, 0, 0);
+	}
+}
+@keyframes progress {
+	from {
+	  width: 0%;
+	  box-shadow: 0 0 0 0px rgba(255, 0, 0, 1);
+	}
+	to {
+	  box-shadow: 0 0 0 6px rgba(255, 0, 0, 0);
+	}
+}
+@media screen and (max-width: 600px) {
+	.resume {
+	  background: transparent;
+	  width: 100%;
+	  margin: 0 auto;
+	  padding: 0;
+	  display: flex;
+	  flex-direction: column;
+	  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+	}
+	.resume .base {
+	  display: flex;
+	  flex-wrap: wrap;
+	  gap: 0px;
+	  width: 100%;
+	  align-items: stretch;
+	  margin: 0;
+	  padding: 0;
+	  border-top-left-radius: var(--radius-s);
+	  border-top-right-radius: var(--radius-s);
+	}
+	.resume .base .profile {
+	  width: 35%; /*calc(40% - 5px)*/
+	  display: flex;
+	  flex-direction: column;
+	  padding: 10px 10px 20px;
+	  margin: 0;
+	  border-top-left-radius: var(--radius-s);
+	  border-right: 1px solid var(--dark);
+	}
+	.resume .base .profile::after {
+	  width: 100%;
+	  height: 20px;
+	  bottom: 0;
+	  left: 0;
+	  transform: skewY(0deg);
+	  border-bottom: 1px solid var(--dark);
+	  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+	}
+	.resume .base .about {
+	  width: 65%;/*calc(60% - 5px)*/
+	  display: flex;
+	  flex-direction: column;
+	  margin: 0;
+	  border-top-right-radius: var(--radius-s);
+	  border-left: 1px solid var(--light);
+	}
+	.resume .base .profile > *,
+	.resume .base .about > * {
+	  flex: 1;
+	}
+	.resume .base .contact,
+	.resume .base .follow {
+	  width: 100%;
+	  padding: 10px;
+	  border-top: 1px solid var(--light);
+	  border-bottom: 1px solid var(--dark);
+	}
+	.resume .base .about {
+	  border-bottom: 1px solid var(--dark);
+	}
+	.resume .base .contact {
+	  display: flex;
+	  flex-wrap: wrap;
+	  gap: 0px;
+	}
+	.resume .base .contact h1 {
+	  flex: 0 0 100%;
+	  margin: 0 0 5px 0;
+	}
+	.resume .base .contact .call,
+	.resume .base .contact .address,
+	.resume .base .contact .email,
+	.resume .base .contact .website {
+	  flex: 0 0 calc(50% - 0px);
+	  box-sizing: border-box;
+	  margin: 0;
+	  padding: 0;
+	}
+	.resume .base .follow .box {
+	  display: flex;
+	  flex-direction: row;
+	  text-align: center;
+	  margin: 0;
+	  padding: 0;
+	}
+	.resume .base .follow .box i {
+        font-size: 15px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        margin: 0 5px 5px 5px;
+    }
+	.resume .func {
+	  box-sizing: border-box;
+	  width: 100%;
+	  margin: 0;
+	  padding: 0;
+	  box-shadow: none;
+	  float: none;
+	  border-bottom-left-radius: var(--radius-s);
+	  border-bottom-right-radius: var(--radius-s);
+	  gap: 0px;
+	}
+    .resume .func:hover > div:not(:hover) {
+      opacity: 1;
+    }
+	.resume .func > div {
+	 border: none;
+	 border-radius: 0;
+	}
+	.resume .func .work,
+	.resume .func .skills {
+	  clear: both;
+	  float: none;
+	  width: 100%;
+	  height: 100%;
+	}
+	.resume .base .profile { background: var(--color-val09);}
+	.resume .base .profile .info .name, .resume .base .profile .info .job { color: var(--color-val02); }
+	.resume .base .profile::after { background: var(--blue1);}
+	.resume .base .about,
+	.resume .base .contact,
+	.resume .base .follow { background: var(--color-val08); }
+	.resume .func .work,
+	.resume .func .skills,
+	.resume .func .edu,
+	.resume .func .sci,
+	.resume .func .skills-prog,
+	.resume .func .skills-soft,
+	.resume .func .interests {
+	  background-color: var(--color-val08);
+	  border-top: 1px solid var(--light);
+	  border-bottom: 1px solid var(--dark);
+	  margin: 0;
+	  padding: 10px;
+	}
+	.resume .func .skills-soft {
+	  border-bottom-left-radius: var(--radius-s);
+	  border-bottom-right-radius: var(--radius-s);
+	}
+}
+@media screen and (max-width: 550px) {
+	.resume .base .profile,
+	.resume .base .about {
+	  border-radius: 0;
+	  width: 100%;
+	}
+	.resume .base .profile {
+	  border-top-left-radius: var(--radius-s);
+	  border-top-right-radius: var(--radius-s);
+	  border-right: none;
+	}
+	.resume .base .profile::after {
+	  height: 5px;
+	}
+	.resume .base .profile .photo img {
+	  width: 30%;
+	}
+	.resume .base .about {
+	  border-left: none;
+	}
+	.resume .base .follow .box {
+      padding: 5px 5px 15px;
+    }
+	.resume .base .follow .box i {
+        font-size: 12.5px;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        margin: 5px;
+    }
+	.resume .base h1 {
+        display : none;
+    }
+
+}
+@media (max-width: 1024px) {
+	html {
+	  font-size: 90%;
+	}
+}
+@media (max-width: 768px) {
+	html {
+	  font-size: 80%;
+	}
+}
+@media (max-width: 500px) {
+	html {
+		font-size: 70%;
+	}
+}
