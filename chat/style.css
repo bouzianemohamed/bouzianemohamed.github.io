@@ -1,0 +1,41 @@
+/*
+    --color-lighter: #c9ebff;
+    --color-light:  #B3D1E3;
+    --color-normal: #99B3C2;
+    --color-dark: #7B8F9C;
+    --color-darker: #343D42;
+    --color-lighter: #47AFFF;
+    --color-light:  #398CCC;
+    --color-normal: #2B6999;
+    --color-dark: #1D4666;
+    --color-darker: #0E2333;
+	--color-val10: #F2F2F2;
+	--color-val09: #E6E6E6;
+	--color-val08: #CCCCCC;
+	--color-val07: #B3B3B3;
+	--color-val06: #999999;
+	--color-val05: #808080;
+	--color-val04: #666666;
+	--color-val03: #4D4D4D;
+	--color-val02: #333333;
+	--color-val01: #1A1A1A;
+*/
+:root {
+    --color-lighter: #F2F2F2;
+    --color-light:  #B3B3B3;
+    --color-normal: #7C8899;
+    --color-dark: #4D4D4D;
+    --color-darker: #1A1A1A;
+}
+*                               { margin: 0; padding: 0; }
+body                            { font: 14px/1.5 system-ui, -apple-system, sans-serif; color: var(--color-darker); background: var(--color-normal); }
+#page-wrap                      { width: 280px; margin: 7px auto; position: relative; overflow: none; }
+#chat-wrap                      { border: none; margin: 0; }
+#chat-area                      { height: 200px; overflow-y: auto; border-bottom: 1px solid var(--color-darker); padding: 20px; background: var(--color-light); scroll-behavior: smooth; margin: 0; }
+#chat-area span                 { width: 95%; display: block; color: var(--color-lighter);  background: var(--color-darker); padding: 2px 2.5%; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }
+#chat-area span i { float: right; right: 0; }
+#chat-area p                    { padding: 8px; border: 1px solid var(--color-dark); color: #000; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; margin: 5px 0; font-family: inherit; font-size: 12px; }
+#name-area                      { position: absolute; top: 12px; left: 10px; color: var(--color-lighter); text-align: right; }   
+#name-area span                 { color: #000; background: #fff}
+#msg-name  {  color: var(--color-darker); border-top: 1px solid var(--color-lighter); border-bottom: 1px solid var(--color-darker);  background: var(--color-normal); width: 260px;  padding: 10px; margin: 0; font-family: inherit; font-size: 12px; }
+#sendie    { color: var(--color-darker); border: none; border-top: 1px solid var(--color-lighter); background: var(--color-light); width: 260px; padding: 10px; margin: 0; font-family: inherit; font-size: 12px; height: 60px; outline: none; resize: none; }

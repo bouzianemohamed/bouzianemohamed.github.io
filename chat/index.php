@@ -1,1 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Chat</title>
+	<link href="/css/reset.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="./style.css" type="text/css" />
+	<script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="./char.js"></script>
+	<script type="text/javascript">
+	 var name = prompt("Enter your chat name:", "Guest");
+	 /* var name = "Guest"; */
+	 if (!name || name === ' ') {
+	    name = "Guest";
+	 }
+	 // strip tags
+	 name = name.replace(/(<([^>]+)>)/ig,"");
+	 // display name on page
+	 $("#name-area").html("You are: <span>" + name + "</span>");
+	 // kick off chat
+	 var chat =  new Chat();
+	 $(function() {
+		 chat.getState();
+		 // watch textarea for key presses
+		 $("#sendie").keydown(function(event) {
+			 var key = event.which;
+			 //all keys including return.
+			 if (key >= 33) {
+				 var maxLength = $(this).attr("maxlength");
+				 var length = this.value.length;
+				 if (length >= maxLength) {
+					 event.preventDefault();
+				 }
+			 }
+		 });
+		 // watch textarea for release of key press
+		 $('#sendie').keyup(function(e) {
+			  if (e.keyCode == 13) {
+				var text = $(this).val();
+				var maxLength = $(this).attr("maxlength");
+				var length = text.length;
+				if (length <= maxLength + 1) {
+					chat.send(text, name);
+					$(this).val("");
 
+				} else {
+
+					$(this).val(text.substring(0, maxLength));
+				}
+			  }
+		 });
+
+	 });
+	var mozilla = (navigator.userAgent.toLowerCase().indexOf('gecko') != -1) ? true : false;
+	var opera = (navigator.userAgent.toLowerCase().indexOf('opera') != -1) ? true : false;
+	var ie = (navigator.userAgent.toLowerCase().indexOf('ms') != -1) ? true : false;
+	var chrome = (navigator.userAgent.toLowerCase().indexOf('chrome') != -1) ? true : false;
+
+	 function add_smiley(CodeValue, code) {
+		var textareaContent = document.getElementById("sendie");
+		if(ie) {
+			var chaine = document.selection.createRange().text;
+			if(chaine) {
+				var sel = document.selection.createRange();
+
+				sel.text =  "<img src=/smileys/" + CodeValue + ".gif alt ='" + code + "' />";
+			} else {
+				textareaContent.value += "<img src=/smileys/" + CodeValue + ".gif alt ='" + code + "' />";
+			}
+		} else {
+			champ = textareaContent;
+			val = champ.value;
+			valDeb = val.substring(0, champ.selectionStart);
+			valFin = val.substring(champ.selectionEnd, champ.textLength);
+			champ.value = valDeb + "[img src=/smileys/" + CodeValue + ".gif alt ='" + code + "' /]" + valFin;
+		}
+	 }
+	</script>
+</head>
+<body onload="setInterval('chat.update()', 1000)">
+	<div id="page-wrap">
+	 <p id="name-area"></p>
+	 <div id="chat-wrap">
+		<div id="chat-area"></div>
+	 </div>
+	 <form id="send-message-area">
+		<div id="msg-name">
+		 <center>
+		<a href="#commentaire" onmousedown="add_smiley('smile', ':P');"><img src="/smileys/smile.gif" alt=":P" /></a>
+		<a href="#commentaire" onmousedown="add_smiley('biggrin', ':)');"><img src="/smileys/biggrin.gif" alt=":)" /></a>
+		<a href="#commentaire" onmousedown="add_smiley('wink', ':wink:');"><img src="/smileys/wink.gif" alt=":wink:" /></a>
+		<a href="#commentaire" onmousedown="add_smiley('exclaim', ':lol:');"><img src="/smileys/exclaim.gif" alt=":lol:" /></a>
+		<a href="#commentaire" onmousedown="add_smiley('surprised', ':surprised:');"><img src="/smileys/surprised.gif" alt=":surprised:" /></a>
+		<a href="#commentaire" onmousedown="add_smiley('confused', ':confused:');"><img src="/smileys/confused.gif" alt=":confused:" /></a>
+		<a href="#commentaire" onmousedown="add_smiley('mad', ':mad:');"><img src="/smileys/mad.gif" alt=":mad:" /></a>
+		<a href="#commentaire" onmousedown="add_smiley('neutral', ':neutral:');"><img src="/smileys/neutral.gif" alt=":neutral:" /></a>
+		<a href="#commentaire" onmousedown="add_smiley('cool', ':cool:');"><img src="/smileys/cool.gif" alt=":cool:" /></a>
+		<a href="#commentaire" onmousedown="add_smiley('cry', ':cry:');"><img src="/smileys/cry.gif" alt=":cry:" /></a>
+		<a href="#commentaire" onmousedown="add_smiley('razz', ':razz:');"><img src="/smileys/razz.gif" alt=":razz:" /></a>
+		<a href="#commentaire" onmousedown="add_smiley('twisted', ':twisted:');"><img src="/smileys/twisted.gif" alt=":twisted:" /></a>
+		<a href="#commentaire" onmousedown="add_smiley('redface', ':redface:');"><img src="/smileys/redface.gif" alt=":redface:" /></a>
+		<a href="#commentaire" onmousedown="add_smiley('arrow', ':arrow:');"><img src="/smileys/arrow.gif" alt=":arrow:" /></a>
+		<a href="#commentaire" onmousedown="add_smiley('info', ':info:');"><img src="/smileys/info.gif" alt=":info:" /></a>
+		<a href="#commentaire" onmousedown="add_smiley('alert', ':alert:');"><img src="/smileys/alert.gif" alt=":alert:" /></a>
+		<a href="#commentaire" onmousedown="add_smiley('question', ':question:');"><img src="/smileys/question.gif" alt=":question:" /></a>
+		<a href="#commentaire" onmousedown="add_smiley('fire', ':fire:');"><img src="/smileys/fire.gif" alt=":fire:" /></a>
+		<a href="#commentaire" onmousedown="add_smiley('heart', ':heart:');"><img src="/smileys/heart.gif" alt=":heart:" /></a>
+		<a href="#commentaire" onmousedown="add_smiley('star', ':star:');"><img src="/smileys/star.gif" alt=":star:" /></a>
+		<a href="#commentaire" onmousedown="add_smiley('radioactive', ':radioactive:');"><img src="/smileys/radioactive.gif" alt=":radioactive:" /></a>
+		<a href="#commentaire" onmousedown="add_smiley('thinking', ':thinking:');"><img src="/smileys/thinking.gif" alt=":thinking:" /></a>
+		</center>
+		</div>
+		<textarea id="sendie" maxlength = '200' ></textarea>
+	 </form>
+	</div>
+</body>
+</html>
